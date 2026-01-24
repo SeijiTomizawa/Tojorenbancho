@@ -93,7 +93,7 @@ const techniques: Technique[] = [
   
   // 影（12本）
   { id: 27, name: '太刀落', category: '影', order: 1 },
-  { id: 28, name: '鍔割', category: '', order: 2 },
+  { id: 28, name: '鍔割', category: '影', order: 2 },
   { id: 29, name: '着杖', category: '影', order: 3 },
   { id: 30, name: '引提', category: '影', order: 4 },
   { id: 31, name: '左貫', category: '影', order: 5 },
@@ -205,7 +205,7 @@ export function TechniquesDatabase() {
                 </div>
 
                 {/* カードグリッド */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+                <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-10 gap-1.5 sm:gap-2 md:gap-3">
                   {categoryTechniques
                     .sort((a, b) => a.order - b.order)
                     .map((technique) => (
@@ -216,7 +216,7 @@ export function TechniquesDatabase() {
                         {/* 木の板風カード */}
                         <div className="relative bg-gradient-to-b from-[#8B4513] via-[#A0522D] to-[#8B4513] rounded-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden border-2 border-[#654321]"
                              style={{ 
-                               height: '280px',
+                               height: '220px',
                                backgroundImage: 'linear-gradient(90deg, rgba(139,69,19,0.1) 0%, transparent 50%, rgba(139,69,19,0.1) 100%)',
                              }}>
                           {/* 木目効果 */}
@@ -226,15 +226,15 @@ export function TechniquesDatabase() {
                                }}></div>
                           
                           {/* 木の節 */}
-                          <div className="absolute top-8 left-1/2 w-3 h-3 rounded-full bg-[#654321] opacity-40 -translate-x-1/2"></div>
-                          <div className="absolute bottom-12 left-1/3 w-2 h-2 rounded-full bg-[#654321] opacity-30"></div>
+                          <div className="absolute top-6 left-1/2 w-2 h-2 rounded-full bg-[#654321] opacity-40 -translate-x-1/2"></div>
+                          <div className="absolute bottom-10 left-1/3 w-1.5 h-1.5 rounded-full bg-[#654321] opacity-30"></div>
                           
                           {/* 内容 */}
-                          <div className="relative h-full flex flex-col items-center justify-center p-4 py-8">
+                          <div className="relative h-full flex flex-col items-center justify-center p-2 py-4 sm:p-3 sm:py-6">
                             {/* カテゴリーバッジ（横書き・上部） */}
-                            <div className="mb-4">
+                            <div className="mb-2 sm:mb-3">
                               <span
-                                className={`inline-block px-2 py-1 text-xs rounded-sm ${categoryInfo.color} border border-[#EFE6D5]/30`}
+                                className={`inline-block px-1.5 py-0.5 text-[8px] sm:text-[9px] rounded-sm ${categoryInfo.color} border border-[#EFE6D5]/30 whitespace-nowrap`}
                               >
                                 {categoryInfo.name}
                               </span>
@@ -242,29 +242,60 @@ export function TechniquesDatabase() {
 
                             {/* 形名（縦書き） */}
                             <div className="flex-1 flex items-center justify-center">
-                              <h4 
-                                className="text-2xl sm:text-3xl font-brush-bold text-[#1a1a1a] tracking-widest"
-                                style={{ 
-                                  writingMode: 'vertical-rl',
-                                  textOrientation: 'upright',
-                                  letterSpacing: '0.3em',
-                                  textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
-                                  fontWeight: 700,
-                                }}
-                              >
-                                {technique.name}
-                              </h4>
+                              {technique.name.includes('（') ? (
+                                // カッコ書きがある場合は2列表示
+                                <div className="flex gap-0.5 items-center">
+                                  <h4 
+                                    className="text-sm sm:text-base md:text-lg font-brush-bold text-[#1a1a1a] tracking-widest"
+                                    style={{ 
+                                      writingMode: 'vertical-rl',
+                                      textOrientation: 'upright',
+                                      letterSpacing: '0.15em',
+                                      textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+                                      fontWeight: 900,
+                                    }}
+                                  >
+                                    （{technique.name.split('（')[1]}
+                                  </h4>
+                                  <h4 
+                                    className="text-lg sm:text-xl md:text-2xl font-brush-bold text-[#1a1a1a] tracking-widest"
+                                    style={{ 
+                                      writingMode: 'vertical-rl',
+                                      textOrientation: 'upright',
+                                      letterSpacing: '0.2em',
+                                      textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+                                      fontWeight: 900,
+                                    }}
+                                  >
+                                    {technique.name.split('（')[0]}
+                                  </h4>
+                                </div>
+                              ) : (
+                                // カッコ書きがない場合は1列表示
+                                <h4 
+                                  className="text-lg sm:text-xl md:text-2xl font-brush-bold text-[#1a1a1a] tracking-widest"
+                                  style={{ 
+                                    writingMode: 'vertical-rl',
+                                    textOrientation: 'upright',
+                                    letterSpacing: '0.2em',
+                                    textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+                                    fontWeight: 900,
+                                  }}
+                                >
+                                  {technique.name}
+                                </h4>
+                              )}
                             </div>
 
                             {/* ホバー時の効果 */}
-                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <ArrowRight className="h-4 w-4 text-[#EFE6D5] rotate-90" />
+                            <div className="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-[#EFE6D5] rotate-90" />
                             </div>
                           </div>
 
                           {/* ボーダー装飾 */}
-                          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#654321] to-transparent"></div>
-                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#654321] to-transparent"></div>
+                          <div className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#654321] to-transparent"></div>
+                          <div className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#654321] to-transparent"></div>
                         </div>
                       </div>
                     ))}
