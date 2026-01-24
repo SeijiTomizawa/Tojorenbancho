@@ -12,14 +12,12 @@ export function ScheduleSection() {
     <section id="schedule" className="py-16 sm:py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* セクションヘッダー */}
-        <div className="mb-12 sm:mb-16">
-          <div className="mb-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#172542]">
-              稽古日程
-            </h2>
-          </div>
-          <div className="w-20 h-1 bg-[#A82222]"></div>
-          <p className="mt-4 text-[#333333] text-base sm:text-lg max-w-2xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#172542] mb-4">
+            稽古日程
+          </h2>
+          <div className="w-24 h-1 bg-[#A82222] mx-auto"></div>
+          <p className="mt-4 text-[#333333] text-base sm:text-lg max-w-2xl mx-auto">
             東京都杖道連盟全体の稽古スケジュールです。「番町」をご確認ください。
           </p>
         </div>
