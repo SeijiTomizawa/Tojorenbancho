@@ -19,7 +19,7 @@ const features = [
   {
     icon: Heart,
     title: '心身の鍛錬',
-    description: '礼儀作法と心の修養を大切にしています。',
+    description: 'しっかりと、かつ楽しく稽古をしています。',
   },
 ];
 
@@ -34,7 +34,8 @@ export function AboutSection() {
           </h2>
           <div className="w-20 h-1 bg-[#A82222] mx-auto mb-6"></div>
           <p className="text-[#333333] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            千代田神杖会-番町場所は、神道夢想流杖術を中心に稽古を行う道場です。<br />
+            東京都杖道連盟の傘下である千代田神杖会-番町場所は、<br />
+            神道夢想流杖術を中心に稽古を行う道場です。<br />
             伝統的な武道の精神を大切にしながら、現代社会に適した指導を心がけています。
           </p>
         </div>

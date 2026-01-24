@@ -20,7 +20,7 @@ export function ScheduleSection() {
           </div>
           <div className="w-20 h-1 bg-[#A82222]"></div>
           <p className="mt-4 text-[#333333] text-base sm:text-lg max-w-2xl">
-            Googleカレンダーと連携した稽古スケジュールです。見学も歓迎しております。
+            東京都杖道連盟全体の稽古スケジュールです。「番町」をご確認ください。
           </p>
         </div>
 

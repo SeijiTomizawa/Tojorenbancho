@@ -23,7 +23,7 @@ export function Header() {
             <div className="flex-shrink-0">
               <Link to="/">
                 <h1 className="text-xl sm:text-2xl font-serif tracking-wide hover:text-[#A82222] transition-colors cursor-pointer">
-                  千代田神杖会-番町場所
+                  東京都杖道連盟-千代田神杖会-番町場所
                 </h1>
               </Link>
             </div>
