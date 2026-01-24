@@ -23,7 +23,7 @@ export function Footer() {
             {/* 道場情報 */}
             <div>
               <h3 className="text-xl font-serif text-[#172542] mb-4">
-                千代田神杖会-番町場所
+                東京都杖道連盟-千代田神杖会-番町場所
               </h3>
               <p className="text-[#333333] text-sm leading-relaxed">
                 神道夢想流杖術を学ぶ道場です。<br />
@@ -53,7 +53,7 @@ export function Footer() {
           {/* コピーライト */}
           <div className="border-t border-[#172542]/20 pt-6 text-center">
             <p className="text-sm text-[#333333]">
-              &copy; {new Date().getFullYear()} 千代田神杖会-番町場所 All rights reserved.
+              &copy; {new Date().getFullYear()} 東京都杖道連盟-千代田神杖会-番町場所 All rights reserved.
             </p>
           </div>
         </div>

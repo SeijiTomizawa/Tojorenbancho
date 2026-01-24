@@ -7,6 +7,11 @@ const features = [
     description: '神道夢想流杖術の正統な技術を、丁寧に指導しています。',
   },
   {
+    icon: Heart,
+    title: '杖術の技の研さん',
+    description: '技を伝え、しっかりとかつ楽しく稽古をしています。',
+  },
+  {
     icon: Users,
     title: '初心者歓迎',
     description: '経験がなくても大丈夫。基礎から丁寧にお教えします。',
@@ -15,11 +20,6 @@ const features = [
     icon: Award,
     title: '段位取得',
     description: '昇段審査に向けた指導も行っています。',
-  },
-  {
-    icon: Heart,
-    title: '心身の鍛錬',
-    description: 'しっかりと、かつ楽しく稽古をしています。',
   },
 ];
 
